@@ -1,0 +1,14 @@
+package com.example.verdict
+
+enum class VerdictType {
+    IMPULSIVE_DROP,
+    MODERATE_GROWTH,
+    UNKNOWN
+}
+
+data class Verdict(
+    val type: VerdictType,
+    val title: String,
+    val description: String,
+    val advice: String
+)
