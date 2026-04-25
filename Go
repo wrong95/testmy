@@ -1,0 +1,30 @@
+package com.example.verdict
+
+object VerdictEngine {
+
+    fun analyze(movement: String): Verdict {
+        return when (movement) {
+
+            "impulsive_drop" -> Verdict(
+                type = VerdictType.IMPULSIVE_DROP,
+                title = "Импульсное снижение",
+                description = "Резкое падение цены с высокой скоростью и нестабильными колебаниями.",
+                advice = "В такие периоды чаще ожидают стабилизации перед принятием решений."
+            )
+
+            "moderate_growth" -> Verdict(
+                type = VerdictType.MODERATE_GROWTH,
+                title = "Умеренный рост",
+                description = "Плавный рост с небольшими колебаниями.",
+                advice = "Обычно используют постепенный подход без резких действий."
+            )
+
+            else -> Verdict(
+                type = VerdictType.UNKNOWN,
+                title = "Неопределённо",
+                description = "Недостаточно данных для анализа.",
+                advice = "Обычно ждут более ясной картины движения."
+            )
+        }
+    }
+}
