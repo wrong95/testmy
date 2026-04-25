@@ -1,0 +1,11 @@
+package com.example.verdict
+
+fun main() {
+    val result = VerdictEngine.analyze("impulsive_drop")
+
+    println(result.title)
+    println(result.description)
+    println(result.advice)
+}
+
+
