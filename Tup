@@ -1,0 +1,38 @@
+package com.example.verdict
+
+object VerdictEngine {
+
+    fun analyze(input: MarketInput): Verdict {
+
+        return when {
+
+            input.priceChangePercent < -3 && input.volatilityIndex > 0.7 -> Verdict(
+                title = "Импульсное снижение",
+                description = "Резкое падение с высокой скоростью и нестабильными колебаниями.",
+                advice = "Чаще ожидают стабилизации перед принятием решений.",
+                risk = RiskLevel.HIGH
+            )
+
+            input.priceChangePercent in -3.0..3.0 -> Verdict(
+                title = "Умеренное движение",
+                description = "Цена движется без резких скачков.",
+                advice = "Обычно используется постепенная оценка ситуации.",
+                risk = RiskLevel.MEDIUM
+            )
+
+            input.priceChangePercent > 3 -> Verdict(
+                title = "Рост",
+                description = "Цена растёт с умеренной динамикой.",
+                advice = "Часто рассматривают поэтапный подход.",
+                risk = RiskLevel.MEDIUM
+            )
+
+            else -> Verdict(
+                title = "Неопределённость",
+                description = "Недостаточно выраженная динамика.",
+                advice = "Обычно ждут более ясной структуры движения.",
+                risk = RiskLevel.LOW
+            )
+        }
+    }
+}yhh
