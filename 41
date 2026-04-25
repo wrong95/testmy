@@ -1,0 +1,6 @@
+package com.example.verdict
+
+data class MarketInput(
+    val priceChangePercent: Double,
+    val volatilityIndex: Double
+)
