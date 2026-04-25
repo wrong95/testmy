@@ -1,0 +1,16 @@
+package com.example.verdict
+
+fun main() {
+
+    val input = MarketInput(
+        priceChangePercent = -5.2,
+        volatilityIndex = 0.85
+    )
+
+    val verdict = VerdictEngine.analyze(input)
+
+    println(verdict.title)
+    println(verdict.description)
+    println(verdict.advice)
+    println(verdict.risk)
+}yy
